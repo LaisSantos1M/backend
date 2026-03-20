@@ -241,6 +241,7 @@ export type AlunosWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"Alunos"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Alunos"> | Date | string
   alunos?: Prisma.AlunosCursosListRelationFilter
+  cursos?: Prisma.CursosListRelationFilter
 }
 
 export type AlunosOrderByWithRelationInput = {
@@ -252,6 +253,7 @@ export type AlunosOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   alunos?: Prisma.alunosCursosOrderByRelationAggregateInput
+  cursos?: Prisma.CursosOrderByRelationAggregateInput
 }
 
 export type AlunosWhereUniqueInput = Prisma.AtLeast<{
@@ -266,6 +268,7 @@ export type AlunosWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"Alunos"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Alunos"> | Date | string
   alunos?: Prisma.AlunosCursosListRelationFilter
+  cursos?: Prisma.CursosListRelationFilter
 }, "id" | "email" | "cpf">
 
 export type AlunosOrderByWithAggregationInput = {
@@ -304,6 +307,7 @@ export type AlunosCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   alunos?: Prisma.alunosCursosCreateNestedManyWithoutAlunosInput
+  cursos?: Prisma.CursosCreateNestedManyWithoutAlunosInput
 }
 
 export type AlunosUncheckedCreateInput = {
@@ -315,6 +319,7 @@ export type AlunosUncheckedCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   alunos?: Prisma.alunosCursosUncheckedCreateNestedManyWithoutAlunosInput
+  cursos?: Prisma.CursosUncheckedCreateNestedManyWithoutAlunosInput
 }
 
 export type AlunosUpdateInput = {
@@ -325,6 +330,7 @@ export type AlunosUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   alunos?: Prisma.alunosCursosUpdateManyWithoutAlunosNestedInput
+  cursos?: Prisma.CursosUpdateManyWithoutAlunosNestedInput
 }
 
 export type AlunosUncheckedUpdateInput = {
@@ -336,6 +342,7 @@ export type AlunosUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   alunos?: Prisma.alunosCursosUncheckedUpdateManyWithoutAlunosNestedInput
+  cursos?: Prisma.CursosUncheckedUpdateManyWithoutAlunosNestedInput
 }
 
 export type AlunosCreateManyInput = {
@@ -409,6 +416,16 @@ export type AlunosSumOrderByAggregateInput = {
   idade?: Prisma.SortOrder
 }
 
+export type AlunosListRelationFilter = {
+  every?: Prisma.AlunosWhereInput
+  some?: Prisma.AlunosWhereInput
+  none?: Prisma.AlunosWhereInput
+}
+
+export type AlunosOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
+}
+
 export type AlunosScalarRelationFilter = {
   is?: Prisma.AlunosWhereInput
   isNot?: Prisma.AlunosWhereInput
@@ -430,6 +447,44 @@ export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string
 }
 
+export type AlunosCreateNestedManyWithoutCursosInput = {
+  create?: Prisma.XOR<Prisma.AlunosCreateWithoutCursosInput, Prisma.AlunosUncheckedCreateWithoutCursosInput> | Prisma.AlunosCreateWithoutCursosInput[] | Prisma.AlunosUncheckedCreateWithoutCursosInput[]
+  connectOrCreate?: Prisma.AlunosCreateOrConnectWithoutCursosInput | Prisma.AlunosCreateOrConnectWithoutCursosInput[]
+  connect?: Prisma.AlunosWhereUniqueInput | Prisma.AlunosWhereUniqueInput[]
+}
+
+export type AlunosUncheckedCreateNestedManyWithoutCursosInput = {
+  create?: Prisma.XOR<Prisma.AlunosCreateWithoutCursosInput, Prisma.AlunosUncheckedCreateWithoutCursosInput> | Prisma.AlunosCreateWithoutCursosInput[] | Prisma.AlunosUncheckedCreateWithoutCursosInput[]
+  connectOrCreate?: Prisma.AlunosCreateOrConnectWithoutCursosInput | Prisma.AlunosCreateOrConnectWithoutCursosInput[]
+  connect?: Prisma.AlunosWhereUniqueInput | Prisma.AlunosWhereUniqueInput[]
+}
+
+export type AlunosUpdateManyWithoutCursosNestedInput = {
+  create?: Prisma.XOR<Prisma.AlunosCreateWithoutCursosInput, Prisma.AlunosUncheckedCreateWithoutCursosInput> | Prisma.AlunosCreateWithoutCursosInput[] | Prisma.AlunosUncheckedCreateWithoutCursosInput[]
+  connectOrCreate?: Prisma.AlunosCreateOrConnectWithoutCursosInput | Prisma.AlunosCreateOrConnectWithoutCursosInput[]
+  upsert?: Prisma.AlunosUpsertWithWhereUniqueWithoutCursosInput | Prisma.AlunosUpsertWithWhereUniqueWithoutCursosInput[]
+  set?: Prisma.AlunosWhereUniqueInput | Prisma.AlunosWhereUniqueInput[]
+  disconnect?: Prisma.AlunosWhereUniqueInput | Prisma.AlunosWhereUniqueInput[]
+  delete?: Prisma.AlunosWhereUniqueInput | Prisma.AlunosWhereUniqueInput[]
+  connect?: Prisma.AlunosWhereUniqueInput | Prisma.AlunosWhereUniqueInput[]
+  update?: Prisma.AlunosUpdateWithWhereUniqueWithoutCursosInput | Prisma.AlunosUpdateWithWhereUniqueWithoutCursosInput[]
+  updateMany?: Prisma.AlunosUpdateManyWithWhereWithoutCursosInput | Prisma.AlunosUpdateManyWithWhereWithoutCursosInput[]
+  deleteMany?: Prisma.AlunosScalarWhereInput | Prisma.AlunosScalarWhereInput[]
+}
+
+export type AlunosUncheckedUpdateManyWithoutCursosNestedInput = {
+  create?: Prisma.XOR<Prisma.AlunosCreateWithoutCursosInput, Prisma.AlunosUncheckedCreateWithoutCursosInput> | Prisma.AlunosCreateWithoutCursosInput[] | Prisma.AlunosUncheckedCreateWithoutCursosInput[]
+  connectOrCreate?: Prisma.AlunosCreateOrConnectWithoutCursosInput | Prisma.AlunosCreateOrConnectWithoutCursosInput[]
+  upsert?: Prisma.AlunosUpsertWithWhereUniqueWithoutCursosInput | Prisma.AlunosUpsertWithWhereUniqueWithoutCursosInput[]
+  set?: Prisma.AlunosWhereUniqueInput | Prisma.AlunosWhereUniqueInput[]
+  disconnect?: Prisma.AlunosWhereUniqueInput | Prisma.AlunosWhereUniqueInput[]
+  delete?: Prisma.AlunosWhereUniqueInput | Prisma.AlunosWhereUniqueInput[]
+  connect?: Prisma.AlunosWhereUniqueInput | Prisma.AlunosWhereUniqueInput[]
+  update?: Prisma.AlunosUpdateWithWhereUniqueWithoutCursosInput | Prisma.AlunosUpdateWithWhereUniqueWithoutCursosInput[]
+  updateMany?: Prisma.AlunosUpdateManyWithWhereWithoutCursosInput | Prisma.AlunosUpdateManyWithWhereWithoutCursosInput[]
+  deleteMany?: Prisma.AlunosScalarWhereInput | Prisma.AlunosScalarWhereInput[]
+}
+
 export type AlunosCreateNestedOneWithoutAlunosInput = {
   create?: Prisma.XOR<Prisma.AlunosCreateWithoutAlunosInput, Prisma.AlunosUncheckedCreateWithoutAlunosInput>
   connectOrCreate?: Prisma.AlunosCreateOrConnectWithoutAlunosInput
@@ -444,6 +499,61 @@ export type AlunosUpdateOneRequiredWithoutAlunosNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.AlunosUpdateToOneWithWhereWithoutAlunosInput, Prisma.AlunosUpdateWithoutAlunosInput>, Prisma.AlunosUncheckedUpdateWithoutAlunosInput>
 }
 
+export type AlunosCreateWithoutCursosInput = {
+  email: string
+  nome: string
+  cpf: number
+  idade: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  alunos?: Prisma.alunosCursosCreateNestedManyWithoutAlunosInput
+}
+
+export type AlunosUncheckedCreateWithoutCursosInput = {
+  id?: number
+  email: string
+  nome: string
+  cpf: number
+  idade: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  alunos?: Prisma.alunosCursosUncheckedCreateNestedManyWithoutAlunosInput
+}
+
+export type AlunosCreateOrConnectWithoutCursosInput = {
+  where: Prisma.AlunosWhereUniqueInput
+  create: Prisma.XOR<Prisma.AlunosCreateWithoutCursosInput, Prisma.AlunosUncheckedCreateWithoutCursosInput>
+}
+
+export type AlunosUpsertWithWhereUniqueWithoutCursosInput = {
+  where: Prisma.AlunosWhereUniqueInput
+  update: Prisma.XOR<Prisma.AlunosUpdateWithoutCursosInput, Prisma.AlunosUncheckedUpdateWithoutCursosInput>
+  create: Prisma.XOR<Prisma.AlunosCreateWithoutCursosInput, Prisma.AlunosUncheckedCreateWithoutCursosInput>
+}
+
+export type AlunosUpdateWithWhereUniqueWithoutCursosInput = {
+  where: Prisma.AlunosWhereUniqueInput
+  data: Prisma.XOR<Prisma.AlunosUpdateWithoutCursosInput, Prisma.AlunosUncheckedUpdateWithoutCursosInput>
+}
+
+export type AlunosUpdateManyWithWhereWithoutCursosInput = {
+  where: Prisma.AlunosScalarWhereInput
+  data: Prisma.XOR<Prisma.AlunosUpdateManyMutationInput, Prisma.AlunosUncheckedUpdateManyWithoutCursosInput>
+}
+
+export type AlunosScalarWhereInput = {
+  AND?: Prisma.AlunosScalarWhereInput | Prisma.AlunosScalarWhereInput[]
+  OR?: Prisma.AlunosScalarWhereInput[]
+  NOT?: Prisma.AlunosScalarWhereInput | Prisma.AlunosScalarWhereInput[]
+  id?: Prisma.IntFilter<"Alunos"> | number
+  email?: Prisma.StringFilter<"Alunos"> | string
+  nome?: Prisma.StringFilter<"Alunos"> | string
+  cpf?: Prisma.IntFilter<"Alunos"> | number
+  idade?: Prisma.IntFilter<"Alunos"> | number
+  createdAt?: Prisma.DateTimeFilter<"Alunos"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Alunos"> | Date | string
+}
+
 export type AlunosCreateWithoutAlunosInput = {
   email: string
   nome: string
@@ -451,6 +561,7 @@ export type AlunosCreateWithoutAlunosInput = {
   idade: number
   createdAt?: Date | string
   updatedAt?: Date | string
+  cursos?: Prisma.CursosCreateNestedManyWithoutAlunosInput
 }
 
 export type AlunosUncheckedCreateWithoutAlunosInput = {
@@ -461,6 +572,7 @@ export type AlunosUncheckedCreateWithoutAlunosInput = {
   idade: number
   createdAt?: Date | string
   updatedAt?: Date | string
+  cursos?: Prisma.CursosUncheckedCreateNestedManyWithoutAlunosInput
 }
 
 export type AlunosCreateOrConnectWithoutAlunosInput = {
@@ -486,9 +598,42 @@ export type AlunosUpdateWithoutAlunosInput = {
   idade?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  cursos?: Prisma.CursosUpdateManyWithoutAlunosNestedInput
 }
 
 export type AlunosUncheckedUpdateWithoutAlunosInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  nome?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.IntFieldUpdateOperationsInput | number
+  idade?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  cursos?: Prisma.CursosUncheckedUpdateManyWithoutAlunosNestedInput
+}
+
+export type AlunosUpdateWithoutCursosInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  nome?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.IntFieldUpdateOperationsInput | number
+  idade?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  alunos?: Prisma.alunosCursosUpdateManyWithoutAlunosNestedInput
+}
+
+export type AlunosUncheckedUpdateWithoutCursosInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  nome?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.IntFieldUpdateOperationsInput | number
+  idade?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  alunos?: Prisma.alunosCursosUncheckedUpdateManyWithoutAlunosNestedInput
+}
+
+export type AlunosUncheckedUpdateManyWithoutCursosInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.StringFieldUpdateOperationsInput | string
@@ -505,10 +650,12 @@ export type AlunosUncheckedUpdateWithoutAlunosInput = {
 
 export type AlunosCountOutputType = {
   alunos: number
+  cursos: number
 }
 
 export type AlunosCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   alunos?: boolean | AlunosCountOutputTypeCountAlunosArgs
+  cursos?: boolean | AlunosCountOutputTypeCountCursosArgs
 }
 
 /**
@@ -528,6 +675,13 @@ export type AlunosCountOutputTypeCountAlunosArgs<ExtArgs extends runtime.Types.E
   where?: Prisma.alunosCursosWhereInput
 }
 
+/**
+ * AlunosCountOutputType without action
+ */
+export type AlunosCountOutputTypeCountCursosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CursosWhereInput
+}
+
 
 export type AlunosSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -538,6 +692,7 @@ export type AlunosSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   createdAt?: boolean
   updatedAt?: boolean
   alunos?: boolean | Prisma.Alunos$alunosArgs<ExtArgs>
+  cursos?: boolean | Prisma.Alunos$cursosArgs<ExtArgs>
   _count?: boolean | Prisma.AlunosCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["alunos"]>
 
@@ -574,6 +729,7 @@ export type AlunosSelectScalar = {
 export type AlunosOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "nome" | "cpf" | "idade" | "createdAt" | "updatedAt", ExtArgs["result"]["alunos"]>
 export type AlunosInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   alunos?: boolean | Prisma.Alunos$alunosArgs<ExtArgs>
+  cursos?: boolean | Prisma.Alunos$cursosArgs<ExtArgs>
   _count?: boolean | Prisma.AlunosCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type AlunosIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -583,6 +739,7 @@ export type $AlunosPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
   name: "Alunos"
   objects: {
     alunos: Prisma.$alunosCursosPayload<ExtArgs>[]
+    cursos: Prisma.$CursosPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -987,6 +1144,7 @@ readonly fields: AlunosFieldRefs;
 export interface Prisma__AlunosClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   alunos<T extends Prisma.Alunos$alunosArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Alunos$alunosArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$alunosCursosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  cursos<T extends Prisma.Alunos$cursosArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Alunos$cursosArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CursosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1435,6 +1593,30 @@ export type Alunos$alunosArgs<ExtArgs extends runtime.Types.Extensions.InternalA
   take?: number
   skip?: number
   distinct?: Prisma.AlunosCursosScalarFieldEnum | Prisma.AlunosCursosScalarFieldEnum[]
+}
+
+/**
+ * Alunos.cursos
+ */
+export type Alunos$cursosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Cursos
+   */
+  select?: Prisma.CursosSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Cursos
+   */
+  omit?: Prisma.CursosOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CursosInclude<ExtArgs> | null
+  where?: Prisma.CursosWhereInput
+  orderBy?: Prisma.CursosOrderByWithRelationInput | Prisma.CursosOrderByWithRelationInput[]
+  cursor?: Prisma.CursosWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.CursosScalarFieldEnum | Prisma.CursosScalarFieldEnum[]
 }
 
 /**

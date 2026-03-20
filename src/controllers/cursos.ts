@@ -1,14 +1,16 @@
 import { Request, Response } from "express";
 import { Prisma } from "../../generated/prisma/client";
 import { prisma } from "../../config/prisma";
+import alunos from "./alunos";
 
 
 
 export default {
 
-    liste: async (request: Request, response: Response) => {
-        const users = await prisma.cursos.findMany();
-        return response.status(200).json(users);
+    
+     list: async (request: Request, response: Response) => {
+        const cursos = await prisma.cursos.findMany()
+        return response.status(200).json(cursos);
     },
 
     create: async (request: Request, response: Response) => {
@@ -21,6 +23,7 @@ export default {
                 descricao
             },
         });
+        return response.status(200).json(user);
     },
 
     getById: async (request: Request, response: Response) => {
@@ -30,6 +33,7 @@ export default {
                 id: +request.params.id
             }
         });
+        return response.status(200).json(user);
 
     },
 

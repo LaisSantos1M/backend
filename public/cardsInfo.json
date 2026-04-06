@@ -1,0 +1,42 @@
+[
+{
+    "id":1,
+    "imagem":"/html.png",
+    "tecnologia":"HTML",
+    "texto":"HTML (Linguagem de Marcação de Hipertexto) é a linguagem padrão para criar a estrutura e o conteúdo de páginas da web, definindo elementos como títulos, parágrafos, imagens e links."
+
+},
+{
+    "id":2,
+    "imagem":"/css.jpg",
+    "tecnologia":"CSS",
+    "texto":"CSS (Cascading Style Sheets) é uma linguagem de estilo usada para definir a aparência de documentos escritos em linguagens de marcação como HTML, controlando cores, fontes, layout, espaçamentos e outros aspectos visuais."
+
+},
+{
+    "id":3,
+    "imagem":"/js.png",
+    "tecnologia":"JS",
+    "texto":"JS, ou JavaScript, é uma linguagem de programação usada principalmente para tornar páginas web interativas e dinâmicas no lado do cliente (navegador) e do servidor (Node.js)."
+
+},
+{
+    "id":4,
+    "imagem":"/vitee.png",
+    "tecnologia":"VITE",
+    "texto":"Vite (palavra francesa para rápido, pronunciada como /vit/, como veet) é uma ferramenta de construção de projetos de frontend que se destina a oferecer uma experiência de desenvolvimento mais rápida e leve para projetos de web modernos."
+
+},
+{
+    "id":5,
+    "imagem":"/react.png",
+    "tecnologia":"REACT",
+    "texto":" React é uma biblioteca JavaScript de código aberto criada pelo Facebook para construir interfaces de usuário (UIs) interativas, especialmente para aplicações web e single-page applications (SPAs)."
+
+},{
+    "id":5,
+    "imagem":"/vercel.png",
+    "tecnologia":"VERCEL",
+    "texto":"Vercel é uma plataforma de nuvem que simplifica a criação, implantação e hospedagem de sites e aplicativos web modernos, oferecendo um ambiente otimizado para desenvolvedores, especialmente para aqueles que utilizam o framework Next.js, que foi criado pela própria Vercel."
+}
+]
